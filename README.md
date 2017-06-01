@@ -1,0 +1,1 @@
+Cordova app for CampusBox
