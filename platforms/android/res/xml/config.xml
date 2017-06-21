@@ -37,6 +37,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="https://facebook.com" />
+    <allow-navigation href="https://plus.google.com" />
     <universal-links>
         <host name="campusbox.org" />
         <host name="https://campusbox.org" />
