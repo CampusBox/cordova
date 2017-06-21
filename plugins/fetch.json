@@ -1,0 +1,39 @@
+{
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist@1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-googleplus": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-googleplus@^5.1.1"
+        },
+        "is_top_level": true,
+        "variables": {
+            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.702228530885-vi264d7g6v5ivbcmebjfpomr0hmliomd"
+        }
+    },
+    "cordova-universal-links-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-universal-links-plugin@^1.2.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-facebook4": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/jeduan/cordova-plugin-facebook4"
+        },
+        "is_top_level": true,
+        "variables": {
+            "APP_ID": "1250377088376164",
+            "APP_NAME": "CampusBox"
+        }
+    }
+}

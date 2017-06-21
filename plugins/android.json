@@ -1,0 +1,26 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.hello"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.example.hello"
+        },
+        "cordova-universal-links-plugin": {
+            "PACKAGE_NAME": "in.exun.campusbox"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "1250377088376164",
+            "APP_NAME": "CampusBox",
+            "PACKAGE_NAME": "in.exun.campusbox"
+        }
+    },
+    "dependent_plugins": {}
+}
