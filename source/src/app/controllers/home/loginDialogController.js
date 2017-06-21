@@ -167,7 +167,7 @@
                             .then(function(abc) {
 
                                 console.log("get login response from server");
-                                console.log(abc);
+                                console.log(JSON.stringify(abc));
 
                                 if (abc.registered == false) {
                                     console.log(abc);

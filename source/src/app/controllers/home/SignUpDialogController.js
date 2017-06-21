@@ -80,6 +80,7 @@
             $scope.loading = true;
 
             console.log("Signup from facebook");
+            $scope.signUp = {};
 
             facebookConnectPlugin.login([
                 "user_about_me",
@@ -91,29 +92,38 @@
             ], function(response) {
                 $scope.signUp = {
                     'type': 'facebook',
-                    'access_token': response.authResponse.accessToken,
+                    'token': response.authResponse.accessToken,
                     'expires_in': response.authResponse.expiresIn,
                     'skills': $scope.selectedSkills,
                     'intrests': $scope.interests
                 };
 
-                console.log(JSON.stringify($scope.data));
+                console.log(JSON.stringify($scope.signUp));
 
                 tokenService.post("signup", $scope.signUp)
                     .then(function(abc) {
                         localStorage.setItem('id_token', abc.token);
 
+                        console.log(JSON.stringify(abc));
+
                         $rootScope.token = abc.token;
                         $rootScope.image = abc.image;
                         $rootScope.authenticated = true;
+                        tokenService.get("userImage")
+                                        .then(function(response) {
+                                            $rootScope.user = response;
+                                            tokenService.get("notifications")
+                                                .then(function(abc) {
+                                                    $rootScope.notifications = abc;
+                                                });
+                                        });
                         $mdDialog.hide();
                     })
                     .catch(function(abc) {
                         localStorage.setItem('id_token', abc.token);
                         $scope.problem = abc.status;
-                        $rootScope.token = abc.token;
-                        $rootScope.authenticated = true;
-                        $mdDialog.hide();
+                        $rootScope.authenticated = false;
+                        $scope.showSignUp('Could not contact server. Please try again later!');
                     });
 
             },function(obj) {
@@ -210,7 +220,7 @@
 
         $scope.googleSignUp = function() {
 
-            console.log("Running googleSignIn test");
+            console.log("Running googleSignIn test from signup");
 
             $scope.signUp = {};
             $scope.loading = true;
@@ -249,14 +259,19 @@
                         redirect_uri: "",
                     }).then(function(obj) {
 
+                        console.log("response from desi server");
                         console.log(JSON.stringify(obj));
                         $scope.signUp.token = obj.access_token;
 
                         console.log("starting signUp request");
-                        console.log(JSON.stringify($scope.login));
+                        console.log(JSON.stringify($scope.signUp));
 
                         tokenService.post("signup", $scope.signUp)
                             .then(function(abc) {
+
+                                console.log("Got signup request response");
+                                console.log(JSON.stringify(abc));
+
                                 localStorage.setItem('id_token', abc.token);
                                 $rootScope.token = abc.token;
                                 // $state.go("home.dashboard");
