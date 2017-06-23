@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="in.exun.campusbox" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version='1.0.3' encoding='utf-8'?>
+<widget id="in.exun.campusbox" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CampusBox</name>
     <description>
         We at CampusBox, believe that student life will improve when we focus more on the available social &amp; learning opportunities.
